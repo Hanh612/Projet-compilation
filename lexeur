@@ -1,0 +1,5 @@
+%lexeur AddiNb
+%lexeur MultiNb
+%lexeur SubsNb
+%lexeur Halt
+%lexeur DiviNb
