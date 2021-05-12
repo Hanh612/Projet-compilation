@@ -1,0 +1,45 @@
+/* file parseur.y */
+/* compilation: bison -d parseur.y */
+/* result: parseur.tab.c = C code for syntaxic analyser */
+/* result: parseur.tab.h = def. of lexical units aka lexems */
+%{
+    #include "AST.h" 
+    int yylex(void); /* -Wall : avoid implicit call */
+    int yyerror(AST* pt, const char*); /* same for bison */
+%}
+%parse-param {AST* pt}
+%union {
+    AST node;
+    double number;
+    int boolean;
+    char* str; 
+};
+%type <node> programme  command identifiant expression decl_args arguements
+%type <str> VARIABLE CONSTANT
+%type <number> NOMBRE
+%type <boolean> BOOL
+
+%token VARIABLE
+%token NOMBRE
+%token PT_VIRG
+%token BOOL
+%token EGALE_EGALE
+%token PAS_EGALE
+%token INF
+%token INF_EGAL
+%token SUP
+%token SUP_EGAL
+%token NEGATION
+%token AFFECTATION
+%token INCREMENTATION
+%token DECREMENTATION
+%token IF 
+%token ELSE
+%token OR_OR
+%token AND_AND 
+%token DO
+%token WHILE 
+%token FOR 
+%token FUNCTION
+%token CONSTANT
+%token RETURN
