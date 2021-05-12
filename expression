@@ -1,0 +1,4 @@
+%type <exp> expression
+%token <num> CsteNb SubsNb AddiNb MultiNb Halt
+%left AddiNb SubsNb
+%left MultiNb
