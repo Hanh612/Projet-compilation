@@ -1,0 +1,17 @@
+if(false){
+    a = 8 ; 
+}else{
+    a = 6 ; 
+}
+if (true) {
+    b = 4;
+} else {
+    b = 7;
+}
+
+if(a < 15 ) {
+    c = 15; 
+}else {
+    c = 18 ; 
+}
+
